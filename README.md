@@ -1,8 +1,9 @@
 # Standalone Apache Giraph Docker image
 
-The graph processing system Giraph takes some effort to get set up properly. We built this image to make it easier to try things out on Giraph. It's based on the SequenceIQ pseudo-distributed standalone [Hadoop Docker image](https://registry.hub.docker.com/u/sequenceiq/hadoop-docker/). 
+The graph processing system Giraph takes some effort to get set up properly. We built this image to make it easier to try things out on Giraph. It's published at the Docker hub [here](https://registry.hub.docker.com/u/uwsampa/giraph-docker/).
 
-This image is built using a snapshot of the Giraph repo for compatibility with Hadoop 2.4.x and Yarn. When a Giraph release supports these versions, we will switch to that.
+
+The image is based on the SequenceIQ pseudo-distributed standalone [Hadoop Docker image](https://registry.hub.docker.com/u/sequenceiq/hadoop-docker/). We built it using a snapshot of the Giraph repo for compatibility with Hadoop 2.4.x and Yarn. When a Giraph release supports these versions, we will switch to that.
 
 ## Using the image
 
