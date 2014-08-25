@@ -91,7 +91,7 @@ public class DummyComputation extends BasicComputation<
 Now, go inside the container and compile the code. Set the classpath to include both the Giraph examples jar with dependences along with the auto-generated Hadoop classpath:
 ```
 cd /myhome
-javac -cp /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-2.4.1-jar-with-dependencies.jar:$(hadoop classpath) mypackage/DummyComputation.java
+javac -cp /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-2.4.1-jar-with-dependencies.jar:$($HADOOP_HOME/bin/hadoop classpath) mypackage/DummyComputation.java
 ```
 
 Now, we'll make a copy of the Giraph examples jar and add our class files to it.
