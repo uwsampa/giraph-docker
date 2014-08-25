@@ -54,13 +54,13 @@ $HADOOP_HOME/bin/hdfs dfs -cat /user/root/output/part-m-00001
 
 Here's how to build a simple example. We'll use a quick-and-dirty method to build a jar file containing all necessary Giraph code along with our code by copying the Giraph examples jar with dependences and adding our code to that.
 
-First we'll create a workspace using the directory you mapped inside the container. Create a working directory outside the container in your home directory (which we mapped inside the container), along with a package directory for your code:
+First we'll create a workspace using the directory you mapped inside the container. On your system (outside of Docker), create a working directory outside the container in your home directory (which we mapped inside the container), along with a package directory for your code:
 ```
 mkdir $HOME/giraph-work
 mkdir $HOME/giraph-work/mypackage
 ```
 
-Our example will be a simple computation that just updates weights on vertices and passes the graph through unmodified. Put the following example code in ```$HOME/giraph-work/mypackage/DummyComputation.java```:
+Our example will be a simple computation that just updates weights on vertices and passes the graph through unmodified. Put the following example code in ```$HOME/giraph-work/mypackage/DummyComputation.java``` on your system (outside of Docker):
 ```java
 package mypackage;
 
@@ -89,9 +89,9 @@ public class DummyComputation extends BasicComputation<
 }
 ```
 
-Now, go inside the container and compile the code. Set the classpath to include both the Giraph examples jar with dependences along with the auto-generated Hadoop classpath:
+Now, go inside the Docker container and compile the code. Set the classpath to include both the Giraph examples jar with dependences along with the auto-generated Hadoop classpath:
 ```
-cd /myhome
+cd /myhome/giraph-work
 javac -cp /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-hadoop-2.4.1-jar-with-dependencies.jar:$($HADOOP_HOME/bin/hadoop classpath) mypackage/DummyComputation.java
 ```
 
