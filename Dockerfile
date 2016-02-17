@@ -2,7 +2,7 @@
 #
 # docker build -t uwsampa/giraph .
 
-FROM sequenceiq/hadoop-docker
+FROM sequenceiq/hadoop-docker:2.4.1
 MAINTAINER uwsampa
 
 USER root
